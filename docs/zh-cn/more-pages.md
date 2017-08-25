@@ -1,19 +1,20 @@
-# 多页文档
+# More pages
 
-如果需要创建多个页面，或者需要多级路由的网站，在 docsify 里也能很容易的实现。例如创建一个 `guide.md` 文件，那么对应的路由就是 `/#/guide`。
+If you need more pages, you can simply create more markdown files in your docsify directory. If you create a file named `guide.md`, then it is accessible via `/#/guide`.
 
-假设你的目录结构如下：
+For example, the directory structure is as follows:
 
 ```text
--| docs/
-  -| README.md
-  -| guide.md
-  -| zh-cn/
-    -| README.md
-    -| guide.md
+.
+└── docs
+    ├── README.md
+    ├── guide.md
+    └── zh-cn
+        ├── README.md
+        └── guide.md
 ```
 
-那么对应的访问页面将是
+Matching routes
 
 ```text
 docs/README.md        => http://domain.com
@@ -22,45 +23,50 @@ docs/zh-cn/README.md  => http://domain.com/zh-cn/
 docs/zh-cn/guide.md   => http://domain.com/zh-cn/guide
 ```
 
-## 定制侧边栏
+## Custom sidebar
 
-默认情况下，侧边栏会根据当前文档的标题生成目录。也可以设置文档链接，通过 Markdown 文件生成，效果如当前的文档的侧边栏。
+By default, the table of contents in the sidebar is automatically generated based on your markdown files. If you need a custom sidebar, then you can create your own `_sidebar.md` (see [this documentation's sidebar](https://github.com/QingWei-Li/docsify/blob/master/docs/_sidebar.md) for an example):
 
-首先配置 `loadSidebar` 选项，具体配置规则见[配置项#load-sidebar](configuration.md#load-sidebar)。
+First, you need to set `loadSidebar` to **true**. Details are available in the [configuration paragraph](configuration.md#load-sidebar).
 
 ```html
+<!-- index.html -->
+
 <script>
   window.$docsify = {
     loadSidebar: true
   }
 </script>
-<script src="//unpkg.com/docsify"></script>
+<script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
 ```
 
-接着创建 `_sidebar.md` 文件，内容如下
+Create the `_sidebar.md`:
 
 ```markdown
-- [首页](zh-cn/)
-- [指南](zh-cn/guide)
+<!-- docs/_sidebar.md -->
+
+- [Home](/)
+- [Guide](guide.md)
 ```
 
-!> 需要在文档根目录创建 `.nojekyll` 命名的空文件，阻止 GitHub Pages 忽略命名是下划线开头的文件。
+!> You need to create a `.nojekyll` in `./docs` to prevent GitHub Pages from ignoring files that begin with an underscore.
 
+`_sidebar.md` is loaded from each level directory. If the current directory doesn't have `_sidebar.md`, it will fall back to the parent directory. If, for example, the current path is `/guide/quick-start`,  the `_sidebar.md` will be loaded from `/guide/_sidebar.md`.
 
-`_sidebar.md` 的加载逻辑是从每层目录下获取文件，如果当前目录不存在该文件则回退到上一级目录。例如当前路径为 `/zh-cn/more-pages` 则从 `/zh-cn/_sidebar.md` 获取文件，如果不存在则从 `/_sidebar.md` 获取。
+## Table of Contents
 
-## 显示目录
-
-自定义侧边栏同时也可以开启目录功能。设置 `subMaxLevel` 配置项，具体介绍见 [配置项#sub-max-level](zh-cn/configuration#sub-max-level)。
+A custom sidebar can also automatically generate a table of contents by setting a `subMaxLevel`, compare [sub-max-level configuration](configuration.md#sub-max-level).
 
 ```html
+<!-- index.html -->
+
 <script>
   window.$docsify = {
     loadSidebar: true,
     subMaxLevel: 2
   }
 </script>
-<script src="//unpkg.com/docsify"></script>
+<script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
 ```
 
 ## Ignoring Subheaders
@@ -84,4 +90,3 @@ This header won't appear in the sidebar table of contents.
 ```
 
 Both `{docsify-ignore}` and `{docsify-ignore-all}` will not be rendered on the page when used.
-

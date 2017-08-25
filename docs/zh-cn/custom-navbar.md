@@ -1,10 +1,14 @@
-# 自定义导航栏
+# Custom navbar
 
-我们可以直接在 HTML 里定义导航栏，要注意链接要以 `#/` 开头。
+## HTML
 
-*index.html*
+If you need custom navigation, you can create a HTML-based navigation bar.
+
+!> Note that documentation links begin with `#/`.
 
 ```html
+<!-- index.html -->
+
 <body>
   <nav>
     <a href="#/">EN</a>
@@ -14,54 +18,78 @@
 </body>
 ```
 
+## Markdown
 
-## 配置文件
-
-那我们可以通过 Markdown 文件来配置导航。首先配置 `loadNavbar`，默认加载的文件为 `_navbar.md`。具体配置规则见[配置项#load-navbar](configuration.md#load-navbar)。
-
-*index.html*
-
+Alternatively, you can create a custom markdown-based navigation file by setting `loadNavbar` to **true** and creating `_navbar.md`, compare [load-navbar configuration](configuration.md#load-navbar).
 
 ```html
+<!-- index.html -->
+
 <script>
   window.$docsify = {
     loadNavbar: true
   }
 </script>
-<script src="//unpkg.com/docsify"></script>
+<script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
 ```
 
-*_navbar.md*
-
 ```markdown
+<!-- _navbar.md -->
+
 - [En](/)
-- [中文](/zh-cn/)
+- [chinese](/zh-cn/)
 ```
 
-`_navbar.md` 加载逻辑和 `sidebar` 文件一致，从每层目录下获取。例如当前路由为 `/zh-cn/custom-navbar` 那么是从 `/zh-cn/_navbar.md` 获取导航栏。
+!> You need to create a `.nojekyll` in `./docs` to prevent GitHub Pages from ignoring files that begin with an underscore.
 
-## 嵌套
+`_navbar.md` is loaded from each level directory. If the current directory doesn't have `_navbar.md`, it will fall back to the parent directory. If, for example, the current path is `/guide/quick-start`,  the `_navbar.md` will be loaded from `/guide/_navbar.md`.
 
-如果导航内容过多，可以写成嵌套的列表，会被渲染成下拉列表的形式。
+## Nesting
 
-*_navbar.md*
-
+You can create sub-lists by indenting items that are under a certain parent.
 
 ```markdown
-- 基础
- - [快速开始](zh-cn/quickstart.md)
- - [多页文档](zh-cn/more-pages.md)
- - [定制导航栏](zh-cn/custom-navbar.md)
- - [封面](zh-cn/cover.md)
+<!-- _navbar.md -->
 
-- 配置
-  - [配置项](zh-cn/configuration.md)
-  - [主题](zh-cn/themes.md)
-  - [使用插件](zh-cn/plugins.md)
-  - [Markdown 配置](zh-cn/markdown.md)
-  - [代码高亮](zh-cn/language-highlight.md)
+- Getting started
+  - [Quick start](quickstart.md)
+  - [Writing more pages](more-pages.md)
+  - [Custom navbar](custom-navbar.md)
+  - [Cover page](cover.md)
+
+- Configuration
+  - [Configuration](configuration.md)
+  - [Themes](themes.md)
+  - [Using plugins](plugins.md)
+  - [Markdown configuration](markdown.md)
+  - [Language highlight](language-highlight.md)
 ```
 
-效果图
+renders as
 
-![嵌套导航栏](_images/zh-cn/nested-navbar.png "嵌套导航栏")
+![Nesting navbar](_images/nested-navbar.png "Nesting navbar")
+
+## Combining custom navbars with the emoji plugin
+
+If you use the [emoji plugin](plugins#emoji):
+
+```html
+<!-- index.html -->
+
+<script>
+  window.$docsify = {
+    // ...
+  }
+</script>
+<script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+<script src="//unpkg.com/docsify/lib/plugins/emoji.min.js"></script>
+```
+
+you could, for example, use flag emojis in your custom navbar Markdown file:
+
+```markdown
+<!-- _navbar.md -->
+
+- [:us:, :uk:](/)
+- [:cn:](/zh-cn/)
+```

@@ -1,29 +1,28 @@
 ## docsify
 
-> 一个神奇的文档网站生成工具
+> A magical documentation site generator.
 
-## 是什么
+## What is it
 
-docsify 是一个动态生成文档网站的工具。不同于 GitBook、Hexo 的地方是它不会生成将 `.md` 转成 `.html` 文件，所有转换工作都是在运行时进行。
+docsify generates your documentation website on the fly. Unlike GitBook, it does not generate static html files. Instead, it smartly loads and parses your Markdown files and displays them as website. All you need to do is create an `index.html` to start and [deploy it on GitHub Pages](deploy.md).
 
-这将非常实用，如果只是需要快速的搭建一个小型的文档网站，或者不想因为生成的一堆 `.html` 文件“污染” commit 记录，只需要创建一个 `index.html` 就可以开始写文档而且直接[部署在 GitHub Pages](zh-cn/deploy.md)。
+See the [Quick start](quickstart.md) for more details.
 
-查看[快速开始](zh-cn/quickstart.md)了解详情。
+## Features
 
-## 特性
-- 无需构建，写完文档直接发布
-- 容易使用并且轻量 (~18kB gzipped)
-- 智能的全文搜索
-- 提供多套主题
-- 丰富的 API
-- 支持 Emoji
-- 兼容 IE10+
-- 支持 SSR ([example](https://github.com/QingWei-Li/docsify-ssr-demo))
+* No statically built html files
+* Simple and lightweight (~18kB gzipped)
+* Smart full-text search plugin
+* Multiple themes
+* Useful plugin API
+* Emoji support
+* Compatible with IE10+
+- Support SSR ([example](https://github.com/QingWei-Li/docsify-ssr-demo))
 
-## 例子
+## Examples
 
-可以查看 [Showcase](https://github.com/QingWei-Li/docsify/#showcase) 来了解使用 docsify 的文档项目。
+Check out the [Showcase](https://github.com/QingWei-Li/docsify/#showcase) to docsify in use.
 
-## 捐赠
+## Donate
 
-如果你觉得 docsify 对你有帮助，或者想对我微小的工作一点资瓷，欢迎给我[捐赠](https://github.com/QingWei-Li/donate)。
+Please consider donating if you think docsify is helpful to you or that my work is valuable. I am happy if you can help me [buy a cup of coffee](https://github.com/QingWei-Li/donate). :heart:

@@ -1,30 +1,29 @@
-# Doc helper
+# 文档助手
 
-docsify extends Markdown syntax to make your documents more readable.
+docsify 扩展了一些 Markdown 语法，可以让文档更易读。
 
-## important content
 
-Important content like:
+## 强调内容
 
-```markdown
-!> **Time** is money, my friend!
-```
-
-is rendered as:
-
-!> **Time** is money, my friend!
-
-## General tips
-
-General tips like:
+适合显示重要的提示信息，语法为 `!> 内容`。
 
 ```markdown
-?> *TODO* unit test
+!> 一段重要的内容，可以和其他 **Markdown** 语法混用。
 ```
 
-are rendered as:
+!> 一段重要的内容，可以和其他 **Markdown** 语法混用。
 
-?> *TODO* unit test
+
+## 普通提示
+
+普通的提示信息，比如写 TODO 或者参考内容等。
+
+```markdown
+?> *TODO* 完善示例
+```
+
+?> *TODO* 完善示例
+
 
 ## Ignore to compile link
 
@@ -50,10 +49,10 @@ You will get `<a href="/demo/">link</a>`html. Do not worry, you can still set ti
 <a href="/demo/" title="title">link</a>
 ```
 
+
 ## Set target attribute for link
 
 ```md
 [link](/demo ":target=_blank")
 [link](/demo2 ":target=_self")
 ```
-

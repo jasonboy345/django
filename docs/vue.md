@@ -1,28 +1,25 @@
-# Compatible with Vue
+# 兼容 Vue
 
-You can write Vue components directly in the Markdown file, and it will be parsed. You can use this feature to write vue demo and documentation together.
+你可以直接在 Markdown 文件里写 Vue 代码，它将被执行。我们可以用它写一些 Vue 的 Demo 或者示例代码。
 
-## Basic usage
 
-Load the Vue in `./index.html`.
+## 基础用法
+
+在 `index.html` 里引入 Vue。
 
 ```html
 <script src="//unpkg.com/vue"></script>
 <script src="//unpkg.com/docsify"></script>
-
-<!-- or use the compressed files -->
-<script src="//unpkg.com/vue/dist/vue.min.js"></script>
-<script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
 ```
 
-Then you can immediately write Vue code at Markdown file. `new Vue({ el: '#main' })` script is executed by default to create instance.
+接着就可以愉快地在 Markdown 里写 Vue 了。默认会执行 `new Vue({ el: '#main' })` 创建示例。
 
 *README.md*
 
 ```markdown
-# Vue guide
+# Vue 介绍
 
-`v-for` usage.
+`v-for` 的用法
 
 ```html
 <ul>
@@ -35,12 +32,12 @@ Then you can immediately write Vue code at Markdown file. `new Vue({ el: '#main'
 </ul>
 ```
 
-You can manually initialize a Vue instance.
+当然你也可以手动初始化 Vue，这样你可以自定义一些配置。
 
 *README.md*
 
 ```markdown
-# Vue demo
+# Vue 的基本用法
 
 <div>hello {{ msg }}</div>
 
@@ -52,11 +49,11 @@ You can manually initialize a Vue instance.
 </script>
 ```
 
-!> In a Markdown file, only the script within the first script tag is executed.
+!> 一个 Markdown 文件里只有第一个 `script` 标签内的内容会被执行。
 
-## Combine Vuep to write playground
+## 搭配 Vuep 写 Playground
 
-[Vuep](https://github.com/QingWei-Li/vuep) is a component for rendering Vue components with live editor and preview. Supports Vue component spec and JSX.
+[Vuep](https://github.com/QingWei-Li/vuep) 是一个提供在线编辑和预览效果的 Vue 组件，搭配 docsify 可以直接在文档里写 Vue 的示例代码，支持 Vue component spec 和 JSX。
 
 *index.html*
 
@@ -77,7 +74,7 @@ You can manually initialize a Vue instance.
 
 *README.md*
 ```markdown
-# Vuep
+# Vuep 使用
 
 <vuep template="#example"></vuep>
 
@@ -96,4 +93,20 @@ You can manually initialize a Vue instance.
 </script>
 ```
 
-?> Example Refer to the [vuep documentation](https://qingwei-li.github.io/vuep/).
+<vuep template="#example"></vuep>
+
+<script v-pre type="text/x-template" id="example">
+  <template>
+    <div>Hello, {{ name }}!</div>
+  </template>
+
+  <script>
+    module.exports = {
+      data: function () {
+        return { name: 'Vue' }
+      }
+    }
+  </script>
+</script>
+
+?> 具体效果参考 [Vuep 文档](https://qingwei-li.github.io/vuep/)。

@@ -1,58 +1,56 @@
-# 封面
+# Cover
 
-通过设置 `coverpage` 参数，可以开启渲染封面的功能。具体用法见[配置项#coverpage](configuration.md#coverpage)。
+Activate the cover feature by setting `coverpage` to **true**, compare [coverpage configuration](configuration.md#coverpage).
 
-## 基本用法
+## Basic usage
 
-封面的生成同样是从 markdown 文件渲染来的。开启渲染封面功能后在文档根目录创建 `_coverpage.md` 文件。渲染效果如本文档。
-
-*index.html*
+Set `coverpage` to **true**, and create a `_coverpage.md`:
 
 ```html
+<!-- index.html -->
+
 <script>
   window.$docsify = {
     coverpage: true
   }
 </script>
-<script src="//unpkg.com/docsify"></script>
+<script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
 ```
 
-*_coverpage.md*
-
 ```markdown
+<!-- _coverpage.md -->
+
 ![logo](_media/icon.svg)
 
-# docsify
+# docsify <small>3.5</small>
 
 > A magical documentation site generator.
 
-- Simple and lightweight (~12kb gzipped)
+- Simple and lightweight (~18kB gzipped)
+- No statically built html files
 - Multiple themes
-- Not build static html files
-
 
 [GitHub](https://github.com/QingWei-Li/docsify/)
-[Get Started](#quick-start)
+[Get Started](#docsify)
 ```
 
+!> A document site can have only one coverpage!
 
+## Custom background
 
-!> 一份文档只会在根目录下加载封面，其他页面或者二级目录下都不会加载。
-
-## 自定义背景
-
-目前的背景是随机生成的渐变色，我们自定义背景色或者背景图。在文档末尾用添加图片的 Markdown 语法设置背景。
-
-*_coverpage.md*
+The background color is generated randomly by default. You can customize the background color or a background image:
 
 ```markdown
-# docsify
+<!-- _coverpage.md -->
+
+# docsify <small>3.5</small>
 
 [GitHub](https://github.com/QingWei-Li/docsify/)
 [Get Started](#quick-start)
 
-<!-- 背景图片 -->
+<!-- background image -->
 ![](_media/bg.png)
-<!-- 背景色 -->
+
+<!-- background color -->
 ![color](#f0f0f0)
 ```

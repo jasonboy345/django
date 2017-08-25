@@ -1,9 +1,9 @@
-# Configuration
+# 配置项
 
-**docsify** supports two different ways of configuration. You can configure the `window.$docsify` or write configuration on the script tag via `data-*` attributes.
+docsify 有两种配置参数的方式。一种是配置在 `window.$docsify` 里，另一种是给 `script` 标签添加 `data-*` 属性。
 
 ```html
-<!-- by $docsify -->
+<!-- 方法 1 -->
 <script>
   window.$docsify = {
     repo: 'QingWei-Li/docsify',
@@ -12,7 +12,7 @@
   }
 </script>
 
-<!-- or data-* -->
+<!-- 方法 2 -->
 <script
   src="//unpkg.com/docsify"
   data-repo="QingWei-Li/docsify"
@@ -21,16 +21,17 @@
 </script>
 ```
 
-Both ways are compatible. However, the first way is recommended. It is clear and can be configured in a separate file.
+两种方式可以共存，推荐第一种做法——直接配置 `window.$docsify` 对象——这会让你的配置更加清晰，同时也可以方便的将配置单独写到另一个文件里。
 
-!> In `window.$docsfiy`, the options should be written by camelCase.
+!> 通过 `window.$docsify` 配置属性，需要将属性改成驼峰命名法。通过 `data-*` 属性配置，保持短横线的命名规则。
+
 
 ## el
 
-- Type: `String`
-- Default: `#app`
+- 类型：`String`
+- 默认值：`#app`
 
-The DOM element to be mounted on initialization. It can be a CSS selector string or an actual HTMLElement.
+docsify 初始化的挂载元素，可以是一个 CSS 选择器，默认为 `#app` 如果不存在就直接绑定在 `body` 上。
 
 ```js
 window.$docsify = {
@@ -40,10 +41,10 @@ window.$docsify = {
 
 ## repo
 
-- Type: `String`
-- Default: `null`
+- 类型：`String`
+- 默认值: `null`
 
-Configure the repository url or a string of `username/repo` can add the [GitHub Corner](http://tholman.com/github-corners/) widget in the top right corner of the site.
+配置仓库地址或者 `username/repo` 的字符串，会在页面右上角渲染一个 [GitHub Corner](http://tholman.com/github-corners/) 挂件。
 
 ```js
 window.$docsify = {
@@ -53,12 +54,14 @@ window.$docsify = {
 }
 ```
 
+
 ## max-level
 
-- Type: `Number`
-- Default: `6`
+- 类型：`Number`
+- 默认值: `6`
 
-Maximum Table of content level.
+默认情况下会抓取文档中所有标题渲染成目录，可配置最大支持渲染的标题层级。
+
 
 ```js
 window.$docsify = {
@@ -68,44 +71,45 @@ window.$docsify = {
 
 ## load-navbar
 
-- Type: `Boolean|String`
-- Default: `false`
+- 类型：`Boolean|String`
+- 默认值: `false`
 
-Loads navbar from the Markdown file `_navbar.md` if **true**, or else from the path specified.
+加载自定义导航栏，参考[定制导航栏](zh-cn/custom-navbar.md) 了解用法。设置为 `true` 后会加载 `_navbar.md` 文件，也可以自定义加载的文件名。
 
 ```js
 window.$docsify = {
-  // load from _navbar.md
+  // 加载 _navbar.md
   loadNavbar: true,
 
-  // load from nav.md
+  // 加载 nav.md
   loadNavbar: 'nav.md'
 }
 ```
 
 ## load-sidebar
 
-- Type: `Boolean|String`
-- Default: `false`
+- 类型：`Boolean|String`
+- 默认值: `false`
 
-Loads sidebar from the Markdown file `_sidebar.md` if **true**, or else from the path specified.
+加载自定义侧边栏，参考[多页文档](zh-cn/more-pages.md)。设置为 `true` 后会加载 `_sidebar.md` 文件，也可以自定义加载的文件名。
 
 ```js
 window.$docsify = {
-  // load from _sidebar.md
+  // 加载 _sidebar.md
   loadSidebar: true,
 
-  // load from summary.md
+  // 加载 summary.md
   loadSidebar: 'summary.md'
 }
 ```
 
 ## sub-max-level
 
-- Type: `Number`
-- Default: `0`
+- 类型：`Number`
+- 默认值: `0`
 
-Add table of contents (TOC) in custom sidebar.
+自定义侧边栏后默认不会再生成目录，你也可以通过设置生成目录的最大层级开启这个功能。
+
 
 ```js
 window.$docsify = {
@@ -113,12 +117,13 @@ window.$docsify = {
 }
 ```
 
+
 ## auto2top
 
-- Type: `Boolean`
-- Default: `false`
+- 类型：`Boolean`
+- 默认值: `false`
 
-Scrolls to the top of the screen when the route is changed.
+切换页面后是否自动跳转到页面顶部。
 
 ```js
 window.$docsify = {
@@ -126,62 +131,65 @@ window.$docsify = {
 }
 ```
 
+
 ## homepage
 
-- Type: `String`
-- Default: `README.md`
+- 类型：`String`
+- 默认值: `README.md`
 
-`README.md` in your docs folder will be treated as homepage for your website, but sometimes you may need to serve another file as your homepage.
+设置首页文件加载路径。适合不想将 `README.md` 作为入口文件渲染，或者是文档存放在其他位置的情况使用。
 
 ```js
 window.$docsify = {
-  // Change to /home.md
+  // 入口文件改为 /home.md
   homepage: 'home.md',
 
-  // Or use the readme in your repo
+  // 文档和仓库根目录下的 README.md 内容一致
   homepage: 'https://raw.githubusercontent.com/QingWei-Li/docsify/master/README.md'
 }
 ```
 
 ## base-path
 
-- Type: `String`
+- 类型：`String`
 
-Base path of the website. You can set it to another directory or another domain name.
+文档加载的根路径，可以是二级路径或者是其他域名的路径。
 
 ```js
 window.$docsify = {
   basePath: '/path/',
 
-  // Load the files from another site
+  // 直接渲染其他域名的文档
   basePath: 'https://docsify.js.org/',
 
-  // Even can load files from other repo
+  // 甚至直接渲染其他仓库 readme
   basePath: 'https://raw.githubusercontent.com/ryanmcdermott/clean-code-javascript/master/'
 }
 ```
 
+
 ## coverpage
 
-- Type: `Boolean|String`
-- Default: `false`
+- 类型：`Boolean|String`
+- 默认值: `false`
 
-Activate the [cover feature](cover.md). If true, it will load from `_coverpage.md`.
+启用[封面页](zh-cn/cover.md)。开启后是加载 `_coverpage.md` 文件，也可以自定义文件名。
 
 ```js
 window.$docsify = {
   coverpage: true,
 
-  // Custom file name
+  // 自定义文件名
   coverpage: 'cover.md'
 }
 ```
 
 ## name
 
-- Type: `String`
+- 类型：`String`
 
-Website name as it appears in the sidebar.
+
+文档标题，会显示在侧边栏顶部。
 
 ```js
 window.$docsify = {
@@ -191,16 +199,16 @@ window.$docsify = {
 
 ## name-link
 
-- Type: `String`
-- Default: `window.location.pathname`
+- 类型：`String`
+- 默认值：`window.location.pathname`
 
-The name of the link.
+点击文档标题后跳转的链接地址。
 
 ```js
 window.$docsify = {
   nameLink: '/',
 
-  // For each route
+  // 按照路由切换
   nameLink: {
     '/zh-cn/': '/zh-cn/',
     '/': '/'
@@ -210,9 +218,9 @@ window.$docsify = {
 
 ## markdown
 
-- Type: `Function`
+- 类型: `Object|Function`
 
-See [Markdown configuration](markdown.md).
+参考 [Markdown 配置](zh-cn/markdown.md)。
 
 ```js
 window.$docsify = {
@@ -236,9 +244,9 @@ window.$docsify = {
 
 ## theme-color
 
-- Type: `String`
+- 类型：`String`
 
-Customize the theme color. Use [CSS3 variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables) feature and polyfill in old browser.
+替换主题色。利用 [CSS3 支持变量](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables)的特性，对于老的浏览器有 polyfill 处理。
 
 ```js
 window.$docsify = {
@@ -248,9 +256,10 @@ window.$docsify = {
 
 ## alias
 
-- Type: `Object`
+- 类型：`Object`
 
-Set the route alias. You can freely manage routing rules. Supports RegExp.
+定义路由别名，可以更自由的定义路由规则。 支持正则。
+
 
 ```js
 window.$docsify = {
@@ -264,9 +273,9 @@ window.$docsify = {
 
 ## auto-header
 
-- type: `Boolean`
+- 类型：`Boolean`
 
-If `loadSidebar` and `autoHeader` are both enabled, for each link in `_sidebar.md`, prepend a header to the page before converting it to html. Compare [#78](https://github.com/QingWei-Li/docsify/issues/78).
+同时设置 `loadSidebar` 和 `autoHeader` 后，可以根据 `_sidebar.md` 的内容自动为每个页面增加标题。[#78](https://github.com/QingWei-Li/docsify/issues/78)
 
 ```js
 window.$docsify = {
@@ -277,9 +286,9 @@ window.$docsify = {
 
 ## execute-script
 
-- type: `Boolean`
+- 类型：`Boolean`
 
-Execute the script on the page. Only parse the first script tag([demo](themes)).  If Vue is present, it is turned on by default.
+执行文档里的 script 标签里的脚本，只执行第一个 script ([demo](zh-cn/themes.md))。 如果 Vue 存在，则自动开启。
 
 ```js
 window.$docsify = {
@@ -293,15 +302,14 @@ window.$docsify = {
 <script>
   console.log(2333)
 </script>
+
 ```
 
-Note that if you are running an external script, e.g. an embedded jsfiddle demo, make sure to include the [external-script](plugins.md?id=external-script) plugin.
+注意如果执行的是一个外链脚本，比如 jsfiddle 的内嵌 demo，请确保引入 [external-script](plugins.md?id=外链脚本-external-script) 插件。
 
 ## no-emoji
 
-- type: `Boolean`
-
-Disabled emoji parse.
+禁用 emoji 解析。
 
 ```js
 window.$docsify = {
@@ -311,9 +319,7 @@ window.$docsify = {
 
 ## merge-navbar
 
-- type: `Boolean`
-
-Navbar will be merged with the sidebar on smaller screens.
+小屏设备下合并导航栏到侧边栏。
 
 ```js
 window.$docsify = {
@@ -323,10 +329,8 @@ window.$docsify = {
 
 ## format-updated
 
-- type: `String|Function`
-
-We can display the file update date through **{docsify-updated<span>}</span>** variable. And format it by `formatUpdated`.
-See https://github.com/lukeed/tinydate#patterns
+我们可以显示文档更新日期通过 **{docsify-updated<span>}</span>** 变量. 并且格式化日期通过 `formatUpdated`.
+参考 https://github.com/lukeed/tinydate#patterns
 ```js
 window.$docsify = {
   formatUpdated: '{MM}/{DD} {HH}:{mm}',
@@ -341,10 +345,7 @@ window.$docsify = {
 
 ## external-link-target
 
-- type: `String`
-- default: `_self`
-
-Target to open external links. Default `'_blank'` (new window/tab)
+Currently it defaults to _blank, would be nice if configurable:
 
 ```js
 window.$docsify = {
@@ -352,16 +353,6 @@ window.$docsify = {
 }
 ```
 
-## router-mode
-
-- type: `String`
-- default: `history`
-
-```js
-window.$docsify = {
-  routerMode: 'history' // default: 'hash'
-}
-```
 
 ## noCompileLinks
 
@@ -379,4 +370,3 @@ window.$docsify = {
   ]
 }
 ```
-

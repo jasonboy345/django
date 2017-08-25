@@ -1,9 +1,13 @@
-![logo](_media/icon.jpg)
+![logo](_media/icon.svg)
 
-# django <small>1.11.4</small>
+# docsify <small>4.3.0</small>
 
-> Django makes it easier to build better Web apps more quickly and with less code..
+> A magical documentation site generator.
+
+- Simple and lightweight (~18kB gzipped)
+- No statically built html files
+- Multiple themes
 
 
-[GETIT](https://www.djangoproject.com/)
-
+[GitHub](https://github.com/QingWei-Li/docsify/)
+[Get Started](#docsify)

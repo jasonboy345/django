@@ -1,28 +1,27 @@
-# Themes
+# 主题
 
-There are currently three themes available. Copy [Vue](//vuejs.org) and [buble](//buble.surge.sh) website custom theme and [@liril-net](https://github.com/liril-net) contribution to the theme of the black style.
-
-```html
-<link rel="stylesheet" href="//unpkg.com/docsify/themes/vue.css">
-<link rel="stylesheet" href="//unpkg.com/docsify/themes/buble.css">
-<link rel="stylesheet" href="//unpkg.com/docsify/themes/dark.css">
-<link rel="stylesheet" href="//unpkg.com/docsify/themes/pure.css">
-```
-
-!> Compressed files are available in `/lib/themes/`.
+目前提供三套主题可供选择，模仿 [Vue](//vuejs.org) 和 [buble](//buble.surge.sh) 官网订制的主题样式。还有 [@liril-net](https://github.com/liril-net) 贡献的黑色风格的主题。
 
 ```html
-<!-- compressed -->
-
-<link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
-<link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/buble.css">
-<link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/dark.css">
-<link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/pure.css">
+  <link rel="stylesheet" href="//unpkg.com/docsify/themes/vue.css">
+  <link rel="stylesheet" href="//unpkg.com/docsify/themes/buble.css">
+  <link rel="stylesheet" href="//unpkg.com/docsify/themes/dark.css">
+  <link rel="stylesheet" href="//unpkg.com/docsify/themes/pure.css">
 ```
 
-If you have any ideas or would like to develop a new theme, you are welcome to submit a [pull request](https://github.com/QingWei-Li/docsify/pulls).
+!> CSS 的压缩文件位于 `/lib/themes/`
 
-#### Click to preview
+```html
+  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/buble.css">
+  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/dark.css">
+  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/pure.css">
+```
+
+如果你有其他想法或者想开发别的主题，欢迎提 [PR](https://github.com/QingWei-Li/docsify/pulls)。
+
+#### 点击切换主题
+
 
 <div class="demo-theme-preview">
   <a data-theme="vue">vue.css</a>
@@ -31,14 +30,15 @@ If you have any ideas or would like to develop a new theme, you are welcome to s
   <a data-theme="pure">pure.css</a>
 </div>
 
+
 <style>
   .demo-theme-preview a {
     padding-right: 10px;
   }
 
   .demo-theme-preview a:hover {
-    cursor: pointer;
     text-decoration: underline;
+    cursor: pointer;
   }
 </style>
 

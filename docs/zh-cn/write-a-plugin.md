@@ -1,55 +1,55 @@
-# Write a plugin
+# 自定义插件
 
-A plugin is simply a function that takes `hook` as an argument. The hook supports handling of asynchronous tasks.
+docsify 提供了一套插件机制，其中提供的钩子（hook）支持处理异步逻辑，可以很方便的扩展功能。
 
-## Full configuration
+## 完整功能
 
 ```js
 window.$docsify = {
  plugins: [
   function (hook, vm) {
     hook.init(function() {
-      // Called when the script starts running, only trigger once, no arguments,
+      // 初始化时调用，只调用一次，没有参数。
     })
 
     hook.beforeEach(function(content) {
-      // Invoked each time before parsing the Markdown file.
+      // 每次开始解析 Markdown 内容时调用
       // ...
       return content
     })
 
     hook.afterEach(function(html, next) {
-      // Invoked each time after the Markdown file is parsed.
-      // beforeEach and afterEach support asynchronous。
+      // 解析成 html 后调用。beforeEach 和 afterEach 支持处理异步逻辑
       // ...
-      // call `next(html)` when task is done.
+      // 异步处理完成后调用 next(html) 返回结果
       next(html)
     })
 
     hook.doneEach(function() {
-      // Invoked each time after the data is fully loaded, no arguments,
+      // 每次路由切换时数据全部加载完成后调用，没有参数。
       // ...
     })
 
     hook.mounted(function() {
-      // Called after initial completion. Only trigger once, no arguments.
+      // 初始化完成后调用 ，只调用一次，没有参数。
     })
 
     hook.ready(function() {
-      // Called after initial completion, no arguments.
+      // 初始化并第一次加完成数据后调用，没有参数。
     })
   }
  ]
 }
 ```
 
-!> You can get internal methods through `window.Docsify`. Get the current instance through the second argument.
+!> 如果需要用 docsify 的内部方法，可以通过 `window.Docsify` 获取，通过 `vm` 获取当前实例。
 
-## Example
+## 例子
 
-#### footer
 
-Add footer component in each pages.
+### footer
+
+给每个页面的末尾加上 `footer`
 
 ```js
 window.$docsify = {
@@ -70,6 +70,7 @@ window.$docsify = {
   ]
 }
 ```
+
 
 ### Edit Button
 

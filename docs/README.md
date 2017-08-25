@@ -1,51 +1,28 @@
-## 点击切换主题
+## docsify
 
+> A magical documentation site generator.
 
-<div class="demo-theme-preview">
-  <a data-theme="vue">vue默认</a>
-  <a data-theme="dark">dark黑色</a>
-  <a data-theme="pure">pure纯净</a>
-</div>
+## What is it
 
+docsify generates your documentation website on the fly. Unlike GitBook, it does not generate static html files. Instead, it smartly loads and parses your Markdown files and displays them as website. All you need to do is create an `index.html` to start and [deploy it on GitHub Pages](deploy.md).
 
-<style>
-  .demo-theme-preview a {
-    padding-right: 10px;
-  }
+See the [Quick start](quickstart.md) for more details.
 
-  .demo-theme-preview a:hover {
-    text-decoration: underline;
-    cursor: pointer;
-  }
-</style>
+## Features
 
-<script>
-  var preview = Docsify.dom.find('.demo-theme-preview');
-  var themes = Docsify.dom.findAll('[rel="stylesheet"]');
+* No statically built html files
+* Simple and lightweight (~18kB gzipped)
+* Smart full-text search plugin
+* Multiple themes
+* Useful plugin API
+* Emoji support
+* Compatible with IE10+
+- Support SSR ([example](https://github.com/QingWei-Li/docsify-ssr-demo))
 
-  preview.onclick = function (e) {
-    var title = e.target.getAttribute('data-theme')
+## Examples
 
-    themes.forEach(function (theme) {
-      theme.disabled = theme.title !== title
-    });
-  };
-</script>
+Check out the [Showcase](https://github.com/QingWei-Li/docsify/#showcase) to docsify in use.
 
+## Donate
 
-## Django
-
-> 一个基于python的web框架
-
-## 是什么
-
-
-
-## 特性
-- 无需构建，写完文档直接发布
-
-
-## 例子
-
-
-
+Please consider donating if you think docsify is helpful to you or that my work is valuable. I am happy if you can help me [buy a cup of coffee](https://github.com/QingWei-Li/donate). :heart:

@@ -157,6 +157,7 @@ def home(request):
 ```
 
 11 测试查看结果 
+
 ![测试结果2](_images/05-result2.png)
 
 
@@ -194,6 +195,7 @@ def home(request):
 </html>
 ```
 14 测试结果为: 
+
 ![测试结果3](_images/05-result3.png)
 
 15 还有一些小的瑕疵，在字符串 Django 后面仍旧有一个逗号。这里继续使用模板中的条件语句标记来修改这个瑕疵。
@@ -218,6 +220,7 @@ def home(request):
 只需要判断是否为 List 中的最后一个元素即可。解决了这个 bug。
 
 16 运行查看结果
+
 ![测试结果4](_images/05-result4.png)
 
 17 小结

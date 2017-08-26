@@ -42,6 +42,8 @@ urlpatterns = [
 python manage.py runserver 0.0.0.0:8000
 ```
 5 显示结果
+
+
 ![测试结果1](_images/04-result1.png)
 ![测试结果2](_images/04-result2.png)
 ![测试结果3](_images/04-result3.png)

@@ -93,4 +93,6 @@ urlpatterns = [
 python manage.py runserver 0.0.0.0:8000
 ```
 页面响应结果
+
+
 ![03-success.png](_images/03-success.png)

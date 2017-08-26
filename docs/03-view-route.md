@@ -96,3 +96,15 @@ python manage.py runserver 0.0.0.0:8000
 
 
 ![03-success.png](_images/03-success.png)
+
+## 看图
+![see-pic](_images/03-see-pic.png)
+* 1 请求 
+* 2 __路由检查请求指向__ 检查请求是否合法
+* 3 __视图处理__ 处理业务逻辑
+* 4 响应
+
+## 作业练习,就是想方法让自己独立写出以上代码
+* 新建一个项目 mypro2
+* 新建一个app  `learn`
+* 访问首页响应你好,世界

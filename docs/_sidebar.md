@@ -12,7 +12,9 @@
   - [7.Django-表单forms](07-Django-forms.md)
 
 - git使用
-  - [准备](pre1.md)
+  - [0.关于git](b00-git.md)
+  - [1.git快速上手](b01-git.md)
+  
  
 - django博客开发
   - [准备](pre2.md)

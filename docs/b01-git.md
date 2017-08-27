@@ -89,7 +89,7 @@ ssh-keygen -t rsa
 12 添加 做版本 发布
 ```
 git add -A 添加所有文件及目录
-git commit -m "message" 做一个版本,版本信息
+git commit -m "message" 做一个版本,版本留言
 git push 项目发布到远端仓库
 ```
 
@@ -101,7 +101,7 @@ git push 项目发布到远端仓库
 
 ![add-commit-push](_images/git-use/b01-15-git-principle-1.png)
 
-`git commit`  将stage中的项目提交到远端仓库
+`git commit`  将stage中的项目做成版本到版本库中
 
 ![add-commit-push](_images/git-use/b01-16-git-principle-2.png)
 
@@ -111,7 +111,7 @@ git push 项目发布到远端仓库
 14 查看远端github仓库
 ![check-repository](_images/git-use/b01-13-check-repository.png)
 
-15 查看版本信息
+15 查看仓库中项目的版本信息
 ![check-commit-info](_images/git-use/b01-14-check-commit-info.png)
 
 

@@ -101,7 +101,7 @@ git push 项目发布到远端仓库
 
 ![add-commit-push](_images/git-use/b01-15-git-principle-1.png)
 
-`git commit`  将stage中的项目做成版本到版本库中
+`git commit`  将stage中的项目做成版本到master分支中
 
 ![add-commit-push](_images/git-use/b01-16-git-principle-2.png)
 

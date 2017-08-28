@@ -44,7 +44,10 @@
 * django搭建博客
 * 周老师讲解django知识点总结
 
+## django手册
+> [英文版](https://docs.djangoproject.com/en/1.11/)
 
+> [中文版](http://python.usyiyi.cn/translate/Django111_LTS/index.html)
 
 ## 赞助
 

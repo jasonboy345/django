@@ -51,6 +51,18 @@ Operations to perform:
 ```
 > migrate命令按照app顺序建立或者更新数据库, 将`models.py`与数据库同步
 
+现在重新运行以下命令
+
+![01-django_model_data_shift](_images/django-blog/01-django_model_data_shift.png)
+
+```
+    #出现如下提示表示操作成功
+    Operations to perform:
+      Apply all migrations: auth, sessions, admin, article, contenttypes
+    Running migrations:
+      Applying article.0001_initial... OK
+```
+
 现在我们进入Django中的交互式shell来进行数据库的增删改查等操作
 
 ![01-django_data_shell](_images/django-blog/01-django_data_shell.png)

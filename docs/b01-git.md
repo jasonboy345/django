@@ -12,7 +12,7 @@
 
 2 查看创建的项目
 
-![create-repository](_images/git-use/b01-02-show-the-new-repository.png)
+![show-the-new-repository](_images/git-use/b01-02-show-the-new-repository.png)
 
 
 ## 拉取github中的仓库到本地

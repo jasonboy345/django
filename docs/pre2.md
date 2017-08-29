@@ -5,11 +5,11 @@
 
 **创建项目的指令如下:**
 
-![djang_create_my_blog](_images/djang_create_my_blog.png)
+![00-djang_create_my_blog](_images/django-blog/00-djang_create_my_blog.png)
 
 现在来看一下整个项目的文件结构
 
-![djiango_my_blog_directory](_images/djiango_my_blog_directory.png)
+![00-djiango_my_blog_directory](_images/django-blog/00-djiango_my_blog_directory.png)
 
 ## 建立Django app
 > 
@@ -17,24 +17,24 @@
 
 建立一个`article` app,进入my_blog目录执行下面的代码
 
-![django_create_app](_images/django_create_app.png)
+![00-django_create_app](_images/django-blog/00-django_create_app.png)
 现在让我们重新看一下整个项目的结构
 
-![django_app_directory](_images/django_app_directory.png)
+![00-django_app_directory](_images/django-blog/00-django_app_directory.png)
 
 
 并在my_blog/my_blog/setting.py下添加新建app
 
-![django_setting_add_appname](_images/django_setting_add_appname.png)
+![00-django_setting_add_appname](_images/django-blog/00-django_setting_add_appname.png)
 
 ## 运行程序
 返回my_blog目录执行
 
-![django_runserver](_images/django_runserver.png)
+![00-django_runserver](_images/django-blog/00-django_runserver.png)
 
 现在可以启动浏览器, 输入`http://127.0.0.1:8000/`, 当出现
 
-![django_runsucced](_images/django_runsucced.png)
+![00-django_runsucced](_images/django-blog/00-django_runsucced.png)
 
 说明你成功走出了第一步!
 

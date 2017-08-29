@@ -9,7 +9,7 @@
 ## 设置数据库
 Django项目建成后, 默认设置了使用SQLite数据库, 在my_blog/my_blog/setting.py中可以查看和修改数据库设置:
 
-![django_setting_database](_images/django_setting_database.png)
+![01-django_setting_database](_images/django-blog/01-django_setting_database.png)
 
 
 还可以设置其他数据库, 如MySQL, PostgreSQL, 现在为了简单, 使用默认数据库设置
@@ -17,7 +17,7 @@ Django项目建成后, 默认设置了使用SQLite数据库, 在my_blog/my_blog/
 ## 创建models
 在my_blog/article/models.py下编写如下程序:
 
-![django_app_models](_images/django_app_models.png)
+![01-django_app_models](_images/django-blog/01-django_app_models.png)
 
 其中`__str__(self)`函数Article对象要怎么表示自己, 一般系统默认使用`` 来表示对象, 通过这个函数可以告诉系统使用title字段来表示这个对象
 
@@ -27,7 +27,7 @@ Django项目建成后, 默认设置了使用SQLite数据库, 在my_blog/my_blog/
 
 ## 同步数据
 
-![django_model_data_shift](_images/django_model_data_shift.png)
+![01-django_model_data_shift](_images/django-blog/01-django_model_data_shift.png)
 
 因为我们已经执行过该命令会出现如下提示
 
@@ -42,7 +42,7 @@ Operations to perform:
 
 那么现在需要执行下面的命令
 
-![django_model_data_shift2](_images/django_model_data_shift2.png)
+![01-django_model_data_shift2](_images/django-blog/01-django_model_data_shift2.png)
 ```
     #得到如下提示
     Migrations for 'article':
@@ -53,7 +53,7 @@ Operations to perform:
 
 现在我们进入Django中的交互式shell来进行数据库的增删改查等操作
 
-![django_data_shell](_images/django_data_shell.png)
+![01-django_data_shell](_images/django-blog/01-django_data_shell.png)
 
 > 这里进入Django的shell和python内置的shell是非常类似的
 

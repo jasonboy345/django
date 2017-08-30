@@ -26,7 +26,7 @@
   - [6.makdown和代码高亮](pre8.md)
   - [7.归档,AboutMe和分类](pre9.md)
   - [8.搜索](pre10.md)
-  - [9.RSS和分页](pre11.md)
+  - [9.分页](pre11.md)
   - [10.更上一层楼](pre12.md)
 
 - 周老师知识点整理

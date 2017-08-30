@@ -23,7 +23,7 @@
   - [3.Views和URL](pre5.md)
   - [4.Template](pre6.md)
   - [5.动态URL](pre7.md)
-  - [6.多说,makdown和代码高亮](pre8.md)
+  - [6.makdown和代码高亮](pre8.md)
   - [7.归档,AboutMe和分类](pre9.md)
   - [8.搜索和ReadMore](pre10.md)
   - [9.RSS和分页](pre11.md)

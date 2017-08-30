@@ -127,7 +127,7 @@
                 <div class="pure-menu pure-menu-horizontal pure-menu-open">
                     <ul>
                         <li><a href="http://andrewliu.tk/about/">About Me</a></li>
-                        <li><a href="#">Twitter</a></li>
+                        <li><a href="http://twitter.com/yuilibrary/">Twitter</a></li>
                         <li><a href="#">GitHub</a></li>
                     </ul>
                 </div>
@@ -150,4 +150,4 @@
 此时重新运行服务器, 然后在浏览器中输入http://127.0.0.1:8000/点击对应的博客文章题目, 可以成功的跳转到一个独立的页面中
 
 
-![05-django-blog-url2](_images/django-blog/05-django-blog-url2.png)
+![05-django-blog-url2.png](_images/django-blog/05-django-blog-url2.png)

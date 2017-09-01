@@ -109,6 +109,12 @@ git push 项目发布到远端仓库
 ![add-commit-push](_images/git-use/b01-16-git-principle-2.png)
 
 
+* git工作流
+
+
+![git-work-flow](_images/git-use/b01-17-git-work-flow.jpg)
+
+
 ## 查看远端仓库和版本信息
 
 14 查看远端github仓库

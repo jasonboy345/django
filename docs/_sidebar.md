@@ -17,17 +17,17 @@
   
  
 - django博客开发
-  - [0.项目与APP](pre2.md)
-  - [1.Models](pre3.md)
-  - [2.Admin](pre4.md)
-  - [3.Views和URL](pre5.md)
-  - [4.Template](pre6.md)
-  - [5.动态URL](pre7.md)
-  - [6.makdown和代码高亮](pre8.md)
-  - [7.归档,AboutMe和分类](pre9.md)
-  - [8.搜索](pre10.md)
-  - [9.分页](pre11.md)
-  - [10.更上一层楼](pre12.md)
+  - [1.项目与APP](d01-pro-app.md)
+  - [2.Models](d02-models.md)
+  - [3.Admin](d03-admin.md)
+  - [4.Views和URL](d04-views-url.md)
+  - [5.Template](d05-template.md)
+  - [6.动态URL](d06-url.md)
+  - [7.markdown和代码高亮](d07-markdown.md)
+  - [8.归档,AboutMe和分类](d08-aboutme.md)
+  - [9.搜索](d09-search.md)
+  - [10.分页](d10-pagination.md)
+  - [11.更上一层楼](d11-more.md)
 
 - 周老师知识点整理
   - [准备123](pre23.md)

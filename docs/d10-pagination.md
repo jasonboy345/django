@@ -5,12 +5,12 @@
 * 重写home方法
 * 修改模板
 
-在my_blog/my_blog/views.py中引入包
+在my_blog/article/views.py中引入包
 
 
 ![10-django-page-import](_images/django-blog/10-django-page-import.png)
 
-修改my_blog/my_blog/views.py中的home函数
+修改my_blog/article/views.py中的home函数
 
 
 ![10-django-view](_images/django-blog/10-django-view.png)

@@ -32,9 +32,12 @@
 
 ### 爬虫+大数据
 * 爬取用户登录后的页面 `python_request url_open curl wget`
+* 优酷三层 
+* python 配置IP和netmask 自动化脚本
 
 ### linux网络和安全
 * 在线课程linux配置24例
+* python 配置IP和netmask 自动化脚本
 
 ### web
 * 慕课+极客学院 页面还原度100%

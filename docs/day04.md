@@ -1,44 +1,84 @@
 # 第四天
 
 ## 知识点
-> 三种web身份验证方式-作用反爬虫
 
-### session
-* 普通web多用这种认证用户
-* http协议 字符串协议
-* cookie session记录用户登录信息,会话跟踪
-* PV(访问量)：即Page View, 即页面浏览量或点击量，用户每次刷新即被计算一次。
-* UV(独立访客)：即Unique Visitor,访问您网站的一台电脑客户端为一个访客。00:00-24:00内相同的客户端只被计算一次。
-* Request Headers `Cookie`  `User-Agent`
-* Response Headers `Content-Type:`
+### 做网线
+* 线序
+* 交叉线
+* 直连线
 
-### 接口 RESTful API
-* 移动端多用这种认证用户,85%的APP使用这种
-* OpenID+签名认证
+### 子网掩码
 
-### 基于令牌访问 Token
-* Token授权机制,令牌回收
-* 基于微博 微信 discuz二次开发
+> 作用划分网段和主机地址
 
-### 总结三种web认证方式
-* 标准 cookie session
-* 接口 
-* 令牌
+```
+192.168.201.21/24
+
+相当于
+ip 					192.168.201.21
+netmask 			255.255.255.0
+192.168.201.0    	主播地址 又叫网段地址
+192.168.201.255  	广播地址
+1-254           	本网段可以容纳254台主机 
+
+
+
+
+192.168.201.21/25
+
+相当于
+ip 					192.168.201.21
+netmask 			255.255.255.128
+192.168.201.0   	主播地址 又叫网段地址
+192.168.201.127  	广播地址
+1-126           	本网段可以容纳126台主机 
+
+```
+
+### ubuntu配置ip
+* [ubuntu配置ip](http://www.cnblogs.com/linjiqin/archive/2013/06/21/3148346.html)
+
+```
+1、修改配置文件/etc/network/interfaces
+root@ubuntu:~# sudo gedit /etc/network/interfaces
+
+添加以下内容：
+auto eth0                  #设置自动启动eth0接口
+iface eth0 inet static     #配置静态IP
+address 192.168.11.88      #IP地址
+netmask 255.255.255.0      #子网掩码
+gateway 192.168.11.1        #默认网关
+
+2、修改DNS
+sudo gedit /etc/resolve.conf
+
+nameserver 127.0.0.1 #记得加上
+nameserver 8.8.8.8 #当地dns服务器(用ipconfig /all 查看本地dns，第一个dns是默认的，共有2个dns)
+
+注：#后面的注释信息不要加进去。
+
+3、重启网络，使配置生效
+sudo /etc/init.d/networking restart
+
+4、查看ip是否配置成功 root@ubuntu:~# ifconfig
+```
+
+
+
+### python自动化脚本配置ip
+
 
 
 
 
 ## 任务
 
-### 爬虫+大数据
-* 爬取用户登录后的页面 `python_request url_open curl wget`
+#### 爬虫+大数据
 * 优酷三层 
 * python 配置IP和netmask 自动化脚本
 
-### linux网络和安全
-* 在线课程linux配置24例
+#### linux网络和安全
 * python 配置IP和netmask 自动化脚本
 
-### web
+#### web
 * 慕课+极客学院 页面还原度100%
-
